@@ -44,7 +44,7 @@ def extractAbsencesUsingCursor():
     canSkip = False
     while not canSkip:
         try:
-            a = py.locateOnScreen(resource_path('images/abscensesfileref.png'),grayscale=True)
+            a = py.locateOnScreen(resource_path('images/abscensesfileref.png'), grayscale=True)
 
             canSkip = True
         except Exception as e:
@@ -62,8 +62,9 @@ def extractAbsencesUsingCursor():
 def rollDown():
     canSkip = False
     while not canSkip:
+        print("Buscando mapa de frequencias")
         try:
-            x, y = py.locateCenterOnScreen(resource_path('images/mapadefrequencia.png'), grayscale=True)
+            x, y = py.locateCenterOnScreen(resource_path('images/mapadefrequencia.png'), grayscale=False)
             canSkip = True
         except Exception as e:
             t.sleep(0.5)
@@ -124,7 +125,7 @@ def goToFrequncy():
         except Exception as e:
             time.sleep(0.5)
 
-    if not hasNext(x - 200, y + 10 + ((i+1)*28)):
+    if not hasNext(x - 200, y + 11 + ((i+1)*28)):
         return
 
     t.sleep(0.5)
